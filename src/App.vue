@@ -1,5 +1,5 @@
 <template>
-  <setup msg="Welcome to Your Vue.js + TypeScript App" />
+  <setup user="Ellen" />
 </template>
 
 <script lang="ts">

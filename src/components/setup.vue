@@ -8,9 +8,10 @@
   export default {
     name: 'setup',
     props: {
-      msg: String
+      user: String
     },
-    setup() {
+    setup(props) {
+      console.log(props.user)
       let data = ref([]) // 直接给[]是非响应式的，要用ref包裹一下
       const getDetailData = async () => {
         data = await getData()
