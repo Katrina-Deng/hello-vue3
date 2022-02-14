@@ -1,15 +1,40 @@
 <template>
-  <setup user="Ellen" />
+  <setup :fundId="fundId" />
+  <button @click="changeFundId">Click to change FundId</button>
+  <!-- views -->
+  <hr />
+  <ref-comp />
+  <hr />
+  <watch />
+  <hr />
+  <computed-comp />
+  <hr />
 </template>
 
 <script lang="ts">
-  import { defineComponent } from 'vue'
+  import { defineComponent, ref } from 'vue'
   import setup from './components/setup.vue'
+  import refComp from './views/ref.vue'
+  import watch from './views/watch.vue'
+  import computedComp from './views/computed.vue'
 
   export default defineComponent({
     name: 'App',
     components: {
-      setup
+      setup,
+      refComp,
+      watch,
+      computedComp
+    },
+    setup() {
+      const fundId = ref('FM4620')
+      const changeFundId = () => {
+        fundId.value = 'IF0617'
+      }
+      return {
+        fundId,
+        changeFundId
+      }
     }
   })
 </script>
