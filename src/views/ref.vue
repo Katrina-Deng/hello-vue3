@@ -1,20 +1,32 @@
 <template>
   <span>view-ref:{{ count }}</span>
   <button @click="addCount">add</button>
+  <input type="text" v-model="value" />
+  <div>** {{ value }} **</div>
 </template>
 
 <script>
-  import { ref } from 'vue'
+  import { ref, watch } from 'vue'
 
   export default {
+    // data() {
+    //   return {
+    //     value: ''
+    //   }
+    // },
     setup() {
       const count = ref(0)
+      const value = ref(123)
       const addCount = () => {
         count.value++
       }
+      // watch(value, (newVal, preVal) => {
+      //   console.log(newVal, preVal)
+      // })
       return {
         count,
-        addCount
+        addCount,
+        value
       }
     }
   }

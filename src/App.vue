@@ -29,7 +29,7 @@
     setup() {
       const fundId = ref('FM4620')
       const changeFundId = () => {
-        fundId.value = 'IF0617'
+        fundId.value = 'FM5885'
       }
       return {
         fundId,
